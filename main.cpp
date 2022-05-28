@@ -66,8 +66,9 @@ void startreplay(){
 		std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 		std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
 		float currenttime = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();
+		cout << inputs[nextone] << " ms " << nextone << " is the current click. Current time " << currenttime << endl;
 		if(currenttime == inputs[nextone]){
-			inputsimulate(VK_LBUTTON);
+			inputsimulate(0x01);
 			nextone += 1;
 		}
 	}
